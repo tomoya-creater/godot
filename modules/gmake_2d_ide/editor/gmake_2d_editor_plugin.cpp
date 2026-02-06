@@ -84,10 +84,17 @@ void GMake2DEditorPlugin::_on_apply_template_pressed() {
 
 void GMake2DEditorPlugin::_notification(int p_what) {
     switch (p_what) {
-        case NOTIFICATION_READY: {
+        case NOTIFICATION_PROCESS: {
+            // Keep enforcing 2D-only mode because main screen buttons can be rebuilt/re-enabled
+            // after plugin initialization depending on editor startup order and profile loading.
             _enforce_2d_mode();
         } break;
+        case NOTIFICATION_READY: {
+            _enforce_2d_mode();
+            set_process(true);
+        } break;
         case NOTIFICATION_EXIT_TREE: {
+            set_process(false);
             if (template_panel != nullptr) {
                 remove_control_from_container(CONTAINER_CANVAS_EDITOR_SIDE_LEFT, template_panel);
             }
