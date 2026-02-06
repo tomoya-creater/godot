@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "templates": [
+    {
+      "id": "platformer",
+      "display_name": "Platformer",
+      "description": "2D side-scroller with jump and movement defaults.",
+      "recommended_input_profile": "platformer"
+    },
+    {
+      "id": "roguelike",
+      "display_name": "Roguelike",
+      "description": "Room-based loop with interaction-first controls.",
+      "recommended_input_profile": "roguelike"
+    },
+    {
+      "id": "visual_novel",
+      "display_name": "Visual Novel",
+      "description": "Dialogue and branch focused starter project.",
+      "recommended_input_profile": "visual_novel"
+    },
+    {
+      "id": "top_down_shooter",
+      "display_name": "Top-down Shooter",
+      "description": "Action-focused template with aiming and dash actions.",
+      "recommended_input_profile": "top_down_shooter"
+    }
+  ]
+}
